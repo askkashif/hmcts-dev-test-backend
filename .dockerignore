@@ -1,0 +1,8 @@
+# .dockerignore
+.git
+.gitignore
+.gradle
+build/
+!build/libs/*.jar
+*.md
+.idea/

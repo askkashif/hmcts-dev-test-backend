@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: hmcts-postgres
+    environment:
+      POSTGRES_DB: hmcts_cases
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      PGDATA: /data/postgres
+    ports:
+      - "5433:5432"  # Changed to use port 5433 on host
+    volumes:
+      - postgres:/data/postgres
+    networks:
+      - postgres-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres:
+
+networks:
+  postgres-network:
+    driver: bridge
