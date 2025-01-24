@@ -8,3 +8,19 @@ can run the service in IntelliJ (or your IDE of choice) or however you normally 
 
 There is an example endpoint provided to retrieve an example of a case. You are free to add/remove fields as you
 wish.
+
+
+The Application contains the following features
+
+1) Signup
+2) Signin
+3) CRUD for cases
+4) ADMIN can perform all CRUD operations
+5) USER can only create and read cases
+6) JWT based authentication
+7) Relavant tests for unit, functional, integration and smoke.
+8) Swagger accesible at http://localhost:4000/swagger-ui/index.html
+
+Run Docker via docker-compose up -d to spin up postgres
+
+Run backend via intalij by executing Application.java
